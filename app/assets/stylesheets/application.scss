@@ -1,0 +1,181 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap/dist/css/bootstrap-grid.css";
+@import "bootstrap/dist/css/bootstrap-reboot.css";
+@import "bootstrap/dist/css/bootstrap-utilities.css";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+$font: 'Quicksand', sans-serif;
+
+html {
+  --scrollbarBG: #CFD8DC;
+  --thumbBG: #000000;
+}
+
+body {
+  font-family: $font;
+  background: #f3f4f5;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #000000 #CFD8DC;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 2px;
+    border: 1px transparent;
+  }
+}
+
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar {
+  background-image:  linear-gradient(to right, rgba(0, 0, 0, 0.96), #000000);
+  //padding: 0 !important;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  transition: 0.4s ease-in-out;
+  border-bottom: 0.5px solid transparent;
+  &:hover {
+    border-color: white;
+    transform: scale(1.05);
+  }
+}
+
+path {
+  color: #fff !important;
+}
+
+.navbar-toggler {
+  border: none !important;
+  outline: none !important;
+}
+
+.navbar-nav li {
+  padding: 0 10px;
+}
+
+.navbar-nav li a {
+  color: #fff !important;
+  transition: 0.4s ease-in-out;
+  &:hover {
+    //border-color: white;
+    transform: scale(1.02);
+  }
+}
+
+#banner {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.96), #000000);
+  color: #fff;
+  border: 1px transparent;
+  padding-top: 1%;
+}
+
+.promo-title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  max-width: 25ch;
+}
+
+.promo-intro {
+  max-width: 70ch;
+}
+
+.image-bottom {
+  fill: none;
+}
+
+.cards-title {
+  &:before{
+    content: '';
+    background: #08000a;
+    height: 0.2rem;
+    max-width: 10em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    transform: translateY(2.75rem);
+  }
+
+}
+
+#services {
+  //padding: 2rem;
+  padding-top: 4rem;
+  .btn-primary {
+    box-shadow: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    background-color: black;
+    transition: 0.4s ease-in-out;
+    border: 1px solid black;
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+
+  .card {
+    transition: 0.5s;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.services {
+  padding-inline: 2rem;
+}
+
+.services h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+#about-us {
+  background: #f8f9fa;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
+
+  .card {
+    transition: 0.5s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+  }
+}
+
+.card-img-top {
+  object-fit: cover;
+}

@@ -1,0 +1,8 @@
+{
+  "name": "VSDesign",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^5.0.0-alpha1",
+    "smooth-scroll": "^16.1.3"
+  }
+}
