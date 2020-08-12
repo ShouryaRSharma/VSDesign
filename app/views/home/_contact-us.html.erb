@@ -1,0 +1,36 @@
+<section id="contact">
+  <%= image_tag("wave(4).svg", class: "footer-image") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md">
+      <h2 class="text-center">Services</h2>
+      <p>VS Design Solutions is a studio that offers consultancy for architectural design and services.
+        Spanning across different fields and scales of design, the practice works on residential and commercial projects.
+        Our studio has worked with highly experienced professionals and encourages talented young professionals
+        from various sectors in the field of built environment.</p>
+      <p>We provide architectural services including Concept Design, Building Design, Details, Construction Drawings, Custom Homes, Drafting, Floor Plans, Home Extensions, Home Remodelling, House Plans, New Home Construction, Space Planning, Planning Permissions, Housing Regulation and Sustainable design.
+      The Studio works with a number of external associate consultants to provide professional services which include technical solutions and CAD/BIM services. In addition, it also has associate offices in Delhi.</p>
+    </div>
+  </div>
+  <div class="text-center">
+  </div>
+  <div class="row">
+    <div class="col-md-5">
+      <%= render("contact_form") %>
+    </div>
+    <div class="col-md">
+      <p>Alternatively, you may also directly email the company through this email address or call us if you so wish.</p>
+      <div class="row">
+        <div class="col-md mt-2">
+          <h5 class="float-left big"><i class="fas fa-envelope"></i><%= mail_to "vs1designsolutions@gmail.com", " vs1designsolutions@gmail.com", class: "btn-custom" %></h5>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <h5 class="float-left big"><i class="fas fa-phone"></i> <a class="btn-custom" href="tel:+(44) 7515-478-431">+(44) 7515-478-431</a></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>

@@ -62,7 +62,17 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "VSDesign_#{Rails.env}"
-
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+      address:        "smtp.gmail.com",
+      port:            587,
+      authentication: :plain,
+      domain: 'health-shark.co.uk',
+      enable_starttls_auto: true,
+      user_name:      Rails.application.credentials.gmail_user_name,
+      password:       Rails.application.credentials.password,
+      openssl_verify_mode: 'none'
+  }
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.

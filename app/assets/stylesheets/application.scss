@@ -10,14 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
-@import "bootstrap/dist/css/bootstrap.css";
-@import "bootstrap/dist/css/bootstrap-grid.css";
-@import "bootstrap/dist/css/bootstrap-reboot.css";
-@import "bootstrap/dist/css/bootstrap-utilities.css";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 $font: 'Quicksand', sans-serif;
 
@@ -35,7 +33,7 @@ body {
 
   &::-webkit-scrollbar {
     width: 7px;
-    background: transparent;
+    mix-blend-mode: difference;
   }
 
   &::-webkit-scrollbar-track {
@@ -44,7 +42,7 @@ body {
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--thumbBG);
-    border-radius: 2px;
+    border-radius: 1px;
     border: 1px transparent;
   }
 }
@@ -53,6 +51,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
+  .path {
+    color: #fff !important;
+  }
 }
 
 .navbar {
@@ -61,17 +62,12 @@ body {
 }
 
 .navbar-brand {
-  color: #fff !important;
   transition: 0.4s ease-in-out;
-  border-bottom: 0.5px solid transparent;
+  border: 1px white;
   &:hover {
-    border-color: white;
+    border-bottom: 1px solid;
     transform: scale(1.05);
   }
-}
-
-path {
-  color: #fff !important;
 }
 
 .navbar-toggler {
@@ -107,11 +103,12 @@ path {
 }
 
 .promo-intro {
+  font-size: 1.25rem;
   max-width: 70ch;
 }
 
 .image-bottom {
-  fill: none;
+  max-width: 100%;
 }
 
 .cards-title {
@@ -163,19 +160,206 @@ path {
 }
 
 #about-us {
-  background: #f8f9fa;
   padding-bottom: 4rem;
   padding-top: 4rem;
 
   .card {
-    transition: 0.5s ease-in-out;
+    transition: 0.4s ease-in-out;
     &:hover {
       cursor: pointer;
       transform: scale(1.05);
+
     }
+
   }
 }
 
 .card-img-top {
   object-fit: cover;
+}
+
+.card {
+  transition: 0.4s;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    .image {
+      transition: 0.5s;
+      -webkit-filter: grayscale(0) !important;
+      filter: grayscale(0) !important;
+    }
+  }
+}
+
+.image {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+}
+
+.modal-content {
+  .image {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
+}
+
+#portfolio {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  .card {
+    transition: 0.4s ease-in-out;
+    &:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+  }
+
+  path {
+    color: black !important;
+  }
+
+  .text-subtitle {
+    transform: translateY(1.2rem);
+  }
+
+  .text-shift-right {
+    transform: translateX(5rem);
+  }
+}
+
+.btn-custom {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: 0.8s;
+  &:hover{
+    color: white;
+    text-decoration: none;
+    border-color: white;
+    transform: scale(1.1);
+  }
+}
+
+#contact {
+  h4 {
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.15rem;
+  }
+  color: white;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.96), #000000);
+
+  .footer-image {
+    width: 100%;
+  }
+  .btn-primary {
+    box-shadow: none;
+    padding: 8px 25px;
+    color: black;
+    background-color: white;
+    transition: 0.4s ease-in-out;
+    border: 1px solid black;
+    &:before {
+      transform: translateY(2rem);
+    }
+    &:after {
+      transform: translateY(0.2rem);
+    }
+  }
+
+  .container {
+    transform: translateY(-3rem);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #portfolio {
+    padding-top: 5rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #portfolio {
+    padding-top: 0.5rem;
+    padding-bottom: 4rem;
+  }
+
+  #services {
+    padding-top: 5rem;
+  }
+
+  #about-us {
+    padding-top: 5rem;
+
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #portfolio {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+
+  #services {
+    padding-top: 5rem;
+  }
+
+  #about-us {
+    padding-top: 5rem;
+
+  }
+}
+
+@media only screen and (max-width: 2200px) {
+  #portfolio {
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+
+  #services {
+    padding-top: 5rem;
+  }
+
+  #about-us {
+    padding-top: 5rem;
+
+  }
+
+}
+
+.contact-form-text-area {
+  color: black;
+}
+.hidden { display: none; }
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+  font-size: .8em;
+}
+
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+  font-size: .8em;
+}
+
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: center;
+  font-size: .8em;
+}
+
+.alert-notice {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+  font-size: .8em;
 }
