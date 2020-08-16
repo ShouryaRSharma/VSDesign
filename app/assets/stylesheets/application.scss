@@ -277,12 +277,20 @@ body {
   #portfolio {
     padding-top: 5rem;
   }
+
+  .logo {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 900px) {
   #portfolio {
     padding-top: 0.5rem;
     padding-bottom: 4rem;
+  }
+
+  .logo {
+    display: none;
   }
 
   #services {
@@ -300,6 +308,8 @@ body {
     padding-top: 5rem;
     padding-bottom: 2rem;
   }
+
+
 
   #services {
     padding-top: 5rem;
