@@ -49,7 +49,7 @@ body {
 
 
 #navbar {
-  position: sticky;
+  background-image:  linear-gradient(to right, rgba(0, 0, 0, 0.96), #000000);
   top: 0;
   z-index: 10;
   .path {
@@ -59,23 +59,65 @@ body {
 
 
 .navbar {
-  background-image:  linear-gradient(to right, rgba(0, 0, 0, 0.96), #000000);
+  //background-image:  linear-gradient(to right, rgba(0, 0, 0, 0.96), #000000);
   //padding: 0 !important;
+  justify-content: space-evenly;
 }
 
 .navbar-brand {
   transition: 0.4s ease-in-out;
   border: 1px white;
+  color: #fff!important;
+  font-size: 3rem;
   &:hover {
     border-bottom: 1px solid;
     transform: scale(1.05);
   }
 }
 
+
 .navbar-toggler {
   border: none !important;
   outline: none !important;
 }
+
+.navbar-nav {
+  li {
+    padding: 0 10px;
+
+  }
+
+  li a:before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    right: 100%;
+    bottom: 10%;
+    background: #ffffff; /*** COLOR OF THE LINE ***/
+    height: 3px; /*** THICKNESS OF THE LINE ***/
+
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+
+  li a:hover {
+    opacity: 1 !important;
+  }
+
+  li a:hover:before {
+    right: 0;
+  }
+
+  li li a:before {
+    bottom: 10%;
+  }
+}
+
 
 .navbar-nav li {
   padding: 0 10px;
@@ -95,18 +137,60 @@ body {
   color: #fff;
   border: 1px transparent;
   padding-top: 1%;
+
+  .image {
+    filter: grayscale(0);
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    cursor: pointer;
+  }
+
+  .middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .carousel-inner:hover .image {
+    opacity: 0.3;
+  }
+
+  .carousel-inner:hover .middle {
+    opacity: 0.7;
+  }
+
+  .text {
+    background-color: #928d8d;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+    cursor: pointer;
+  }
+
 }
 
 .promo-title {
   font-size: 3rem;
   font-weight: 500;
-  margin-top: 2rem;
-  max-width: 15ch;
+  margin-top: 2.2rem;
+}
+
+.promo-subtitle {
+  font-size: 1.25rem;
 }
 
 .promo-intro {
-  font-size: 1.25rem;
-  max-width: 70ch;
+  font-size: 1.15rem;
 }
 
 .image-bottom {
@@ -229,6 +313,10 @@ body {
   }
 }
 
+.custom {
+  font-size: 1em!important;
+}
+
 .btn-custom {
   color: white;
   text-decoration: none;
@@ -240,6 +328,18 @@ body {
     border-color: white;
     transform: scale(1.1);
   }
+}
+
+.carousel-border {
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
 }
 
 #contact {
@@ -275,12 +375,43 @@ body {
   }
 }
 
+
+
+
 @media only screen and (max-width: 600px) {
   #portfolio {
     padding-top: 5rem;
   }
+
   .logo {
     display: none;
+  }
+
+  .navbar-brand {
+    transition: 0.4s ease-in-out;
+    border: 1px white;
+    color: #fff!important;
+    font-size: 1rem;
+    &:hover {
+      border-bottom: 1px solid;
+      transform: scale(1.05);
+    }
+  }
+
+  .promo-title {
+    font-size: 1.25rem;
+  }
+
+  .promo-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .promo-intro {
+    font-size: 1.05rem;
+  }
+
+  .list-head {
+    height: auto !important;
   }
 }
 
@@ -293,6 +424,10 @@ body {
     display: none;
   }
 
+  .logo {
+    display: none;
+  }
+
   #services {
     padding-top: 5rem;
   }
@@ -301,6 +436,15 @@ body {
     padding-top: 5rem;
 
   }
+
+}
+
+@media only screen and (max-width: 1024px) {
+  .service-title {
+    //margin-top: 1em;
+    padding-top: 1rem!important;
+  }
+
 }
 
 @media only screen and (max-width: 1200px) {
@@ -323,6 +467,19 @@ body {
   #portfolio {
     padding-top: 5rem;
     padding-bottom: 4rem;
+  }
+
+  .service-title {
+    //margin-top: 1em;
+    padding-top: 5rem;
+  }
+
+  .list-head {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 9em;
+    text-transform: capitalize;
   }
 
   #services {

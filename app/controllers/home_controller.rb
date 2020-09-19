@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  caches_action   :index
+
   def index
 
     @contact = Home.new(params[:home])
